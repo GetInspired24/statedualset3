@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>State & Dynamic Verbs in Present Simple vs Continuous</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 { font-size: 48px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 28px; color: #6db88f; margin-bottom: 20px; }
+    button {
+      background-color: #6db88f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #222;
+      margin: 5% auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 95%;
+      max-width: 900px;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+    }
+    table { width: 100%; border-collapse: collapse; color: white; margin-top: 20px; }
+    th, td { border: 1px solid #555; padding: 8px; text-align: left; }
+    th { background-color: #333; }
+    .close {
+      color: #aaa; float: right; font-size: 28px; font-weight: bold;
+    }
+    .close:hover, .close:focus {
+      color: white; text-decoration: none; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h1>Grammar</h1>
+<h2><a href="https://t.me/joinandgetinspired" style="color: white;">Join&GetInspired</a></h2>
+<h3>State or Dynamic Verbs — Present Simple vs Present Continuous</h3>
+
+<button onclick="document.getElementById('rulesModal').style.display='block'">Study the rules</button>
+<div class="modal" id="rulesModal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('rulesModal').style.display='none'">×</span>
+    <h3>📌 State or Dynamic Verbs</h3>
+    <p>Некоторые глаголы могут использоваться и как <strong>глаголы состояния</strong> (state verbs), и как <strong>глаголы действия</strong> (dynamic verbs), в зависимости от их значения в предложении.</p><p>Если глагол описывает чувство, мнение, принадлежность или восприятие — он state и обычно используется в <strong>Present Simple</strong>.</p><p>Если тот же глагол описывает процесс или действие — он dynamic и используется в <strong>Present Continuous</strong>.</p>
+    <p>Сравните:</p>
+    <table>
+      <tr><th>Глагол</th><th>State (Present Simple)</th><th>Dynamic (Present Continuous)</th></tr>
+      <tr><td>think</td><td>I think it's true. (мнение) — Я думаю, что это правда.</td><td>I’m thinking about it. (процесс) — Я размышляю об этом.</td></tr>
+      <tr><td>have</td><td>She has a car. (владение) — У неё есть машина.</td><td>She’s having lunch. (приём пищи) — Она обедает.</td></tr>
+      <tr><td>see</td><td>I see your point. (понимание) — Я понимаю, о чём ты.</td><td>I’m seeing the doctor. (встреча) — Я встречаюсь с врачом.</td></tr>
+      <tr><td>taste</td><td>The soup tastes good. (вкус) — Суп вкусный.</td><td>He’s tasting the soup. (пробует) — Он пробует суп.</td></tr>
+      <tr><td>smell</td><td>The flowers smell nice. (запах) — Цветы приятно пахнут.</td><td>She’s smelling the flowers. (нюхает) — Она нюхает цветы.</td></tr>
+      <tr><td>look</td><td>You look tired. (выглядеть) — Ты выглядишь уставшим.</td><td>He’s looking at the sky. (смотреть) — Он смотрит на небо.</td></tr>
+      <tr><td>appear</td><td>She appears nervous. (кажется) — Она кажется нервной.</td><td>She’s appearing in a play. (участвует) — Она играет в спектакле.</td></tr>
+      <tr><td>be</td><td>He is polite. (характер) — Он вежливый.</td><td>He’s being rude. (поведение сейчас) — Он ведёт себя грубо (сейчас).</td></tr>
+    </table>
+    <p>⚠️ Важно: значение определяет время — не форма!</p>
+  </div>
+</div>
+
+<h2 style="margin-top: 60px;">🧠 Practice</h2>
+<p>Choose the correct form of the verb:</p>
+
+<div id="tasksContainer"></div>
+<script>
+const tasks = [["1. I ______ (see) your point.", "see", "am seeing", true, "‘See’ в значении ‘понимаю’ — Present Simple."], ["2. She ______ (have) a shower now.", "has", "is having", false, "Действие в процессе — Continuous."], ["3. The baby ______ (look) at me.", "looks", "is looking", false, "Действие — Continuous."], ["4. This coffee ______ (taste) bitter.", "tastes", "is tasting", true, "Описание вкуса — Present Simple."], ["5. He ______ (smell) the cheese to check it.", "smells", "is smelling", false, "Процесс — нюхает — Continuous."], ["6. My mom ______ (think) that it’s a bad idea.", "thinks", "is thinking", true, "Мнение — Present Simple."], ["7. She ______ (be) so sweet today.", "is", "is being", false, "Временное поведение — Continuous."], ["8. I ______ (have) a headache.", "have", "am having", true, "Состояние — Present Simple."], ["9. They ______ (see) their grandparents this weekend.", "see", "are seeing", false, "Запланированная встреча — Continuous."], ["10. This flower ______ (smell) nice.", "smells", "is smelling", true, "Запах — Present Simple."], ["11. You ______ (appear) in the school play?", "appear", "are appearing", false, "Участие в постановке — Continuous."], ["12. You ______ (look) great in that dress.", "look", "are looking", true, "Описание внешности — Present Simple."], ["13. We ______ (think) of going on vacation.", "think", "are thinking", false, "Процесс размышления — Continuous."], ["14. I ______ (be) always tired these days.", "am", "am being", true, "Состояние — Present Simple."], ["15. She ______ (have) a nap right now.", "has", "is having", false, "Процесс сна — Continuous."], ["16. He ______ (taste) the cake to see if it’s ready.", "tastes", "is tasting", false, "Действие — пробует — Continuous."], ["17. The teacher ______ (see) your progress clearly.", "sees", "is seeing", true, "Понимание — Present Simple."], ["18. The actor ______ (appear) nervous on stage.", "appears", "is appearing", true, "Кажется — состояние."], ["19. We ______ (have) a picnic now.", "have", "are having", false, "Процесс — Continuous."], ["20. That child ______ (look) just like his father.", "looks", "is looking", true, "Внешность — Present Simple."], ["21. She ______ (smell) the perfume in the shop.", "smells", "is smelling", false, "Процесс — нюхает — Continuous."], ["22. He ______ (be) a very responsible student.", "is", "is being", true, "Постоянная черта — Present Simple."], ["23. I ______ (have) trouble with this exercise.", "have", "am having", true, "Состояние — Present Simple."], ["24. You ______ (see) this film today?", "see", "are seeing", false, "Запланированное действие — Continuous."], ["25. The sauce ______ (taste) a bit strange.", "tastes", "is tasting", true, "Вкус — Present Simple."]];
+
+tasks.forEach(([question, option1, option2, isFirstCorrect, explanation], i) => {
+  const container = document.createElement("div");
+  container.style = "margin: 20px auto; font-size: 18px; max-width: 700px;";
+  container.innerHTML = `
+    <p>${question}</p>
+    <button onclick="checkAnswer(this, ${isFirstCorrect}, '${isFirstCorrect ? '' : explanation}')">${option1}</button>
+    <button onclick="checkAnswer(this, ${!isFirstCorrect}, '${!isFirstCorrect ? '' : explanation}')">${option2}</button>
+  `;
+  document.getElementById("tasksContainer").appendChild(container);
+});
+
+function checkAnswer(button, isCorrect, explanation = '') {
+  const buttons = button.parentElement.querySelectorAll("button");
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.style.backgroundColor = '#4e9e72';
+    button.style.color = 'white';
+  } else {
+    button.style.backgroundColor = '#b35b5b';
+    button.style.color = 'white';
+    if (explanation && !button.parentElement.querySelector('.explanation')) {
+      const p = document.createElement("p");
+      p.className = 'explanation';
+      p.innerText = "❗ " + explanation;
+      p.style.color = "#ffa07a";
+      p.style.marginTop = "10px";
+      button.parentElement.appendChild(p);
+    }
+  }
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('rulesModal');
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
